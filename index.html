@@ -30,8 +30,8 @@
             </div>
             <div class="nav">
                 <ul>
-                    <li><a class="hoverLine" href="#">Feautures</a></li>
-                    <li><a class="hoverLine" href="#">Gallery</a></li>
+                    <li><a class="hoverLine" href="#features">Feautures</a></li>
+                    <li><a class="hoverLine" href="#gallery">Gallery</a></li>
                     <li><a class="hoverBox" href="#">Log In</a></li>
                 </ul>
             </div>
@@ -47,7 +47,7 @@
                 <img class="template1" src="images/template2.jpg">
                 <img class="template2" src="images/template1.jpg">
             </div>
-            <div class="features">
+            <div id="features">
                 <div>
                     <span class="icon"><i class="fa fa-diamond"></i></span>
                     <h2 class="title">Elegant</h2>
@@ -69,12 +69,49 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet porttitor lorem, sit amet tincidunt ante. Phasellus pulvinar scelerisque elit vel sagittis. Phasellus quis nunc quis nisi imperdiet maximus vel in lorem.
                     </p>
                 </div>
+                <div>
+                    <span class="icon"><i class="fa fa-gbp"></i></span>
+                    <h2 class="title">Cheapest Price</h2>
+                    <p class="description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet porttitor lorem, sit amet tincidunt ante. Phasellus pulvinar scelerisque elit vel sagittis. Phasellus quis nunc quis nisi imperdiet maximus vel in lorem.
+                    </p>
+                </div>
+                <div>
+                    <span class="icon"><i class="fa fa-envelope"></i></span>
+                    <h2 class="title">Support</h2>
+                    <p class="description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet porttitor lorem, sit amet tincidunt ante. Phasellus pulvinar scelerisque elit vel sagittis. Phasellus quis nunc quis nisi imperdiet maximus vel in lorem.
+                    </p>
+                </div>
+            </div>
+            <div id="seperator">
+                <h1>Gallery</h1>
+            </div>
+            <div id="gallery">
+                
             </div>
         </div>
 
 
-        <script src="js/jquery.js"></script>
+        <script src="js/jquery-2.2.4.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
         <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $('a[href*="#"]:not([href="#"])').click(function() {
+                    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                        var target = $(this.hash);
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                        if (target.length) {
+                            $('html, body').animate({
+                                scrollTop: target.offset().top
+                            }, 700, "easeInOutCubic");
+                            return false;
+                        }
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
