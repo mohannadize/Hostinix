@@ -26,7 +26,7 @@
         </head>
     </head>
     <body>
-        <header class="">
+        <header>
             <div class="pagelogo">
                 <h2>Hosting Service</h2>
             </div>
@@ -36,6 +36,7 @@
                     <li><a class="hoverLine" href="#gallery">Gallery</a></li>
                     <li><a class="hoverBox" href="#">Log In</a></li>
                 </ul>
+                <a class="langBtn" href=#>AR</a>
             </div>
         </header>
         <div class="gradientOne"></div>
@@ -86,7 +87,7 @@
                     </p>
                 </div>
             </div>
-            <div id="seperator">
+            <div id="seperatorOne">
                 <h1>Gallery</h1>
             </div>
             <div id="gallery">
@@ -133,6 +134,12 @@
                     </div>
                 </div>
             </div>
+            <p class="notice">
+                These are not all the available templates.
+            </p>
+            <div id="seperatorTwo">
+                <h1>Starting From 499 EGP<span>/Year</span></h1>
+            </div>
         </div>
 
 
@@ -140,6 +147,7 @@
         <script src="js/jquery-ui.min.js"></script>
         <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery-scrollspy.js"></script>
         <script type="text/javascript">
             $(function() {
                 $('a[href*="#"]:not([href="#"])').click(function() {
@@ -154,6 +162,21 @@
                         }
                     }
                 });
+            });
+            $(function() {
+
+                var $nav = $('header');
+
+                $("header").scrollspy({
+                    min: $nav.offset().top,
+                    onEnter: function(element, position) {
+                        $nav.removeClass('fixedHeader');
+                    },
+                    onLeave: function(element, position) {
+                        $nav.addClass('fixedHeader');
+                    }
+                });
+
             });
         </script>
     </body>
