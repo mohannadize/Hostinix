@@ -276,4 +276,73 @@ header {
     width: 100vw;
     padding-top: 60px;
     padding-bottom: 60px;
+    padding-left: 75px;
+    padding-right: 75px;
+    text-align: center;
+    position: relative;
+}
+.template {
+    position: relative;
+    width: 350px;
+    height: 200px;
+    display: inline-block;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    overflow: hidden;
+    box-shadow: inset 3px 3px 8px -2px rgba(0,0,0,0.3);
+    cursor: default;
+}
+.template img {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    z-index: -1;
+}
+.template .info {
+    background-color: rgba(255, 255, 255, 0.95);
+    position: relative;
+    top: 100%;
+    left: 0;
+    right:0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    height: 50%;
+    transition: all 550ms ease;
+    box-shadow: inset 0 7px 13px -7px rgba(0,0,0,0.6);
+}
+.template .info h3 {
+    font-family: Bariol;
+    text-align: left;
+    position: relative;
+    top: 15px;
+    margin-left: 25px;
+}
+.template .info a {
+    text-decoration:none;
+    color: black;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: absolute;
+    right: 25px;
+    top: 15px;
+    border-radius: 10px 3px 10px 3px;
+    border: 2px solid black;
+    font-family: Bariol;
+    font-size: 16px;
+    transition: all 250ms ease;
+}
+.template .info a:hover {
+    color:white;
+    background-color: black;
+}
+.template:hover .info {
+    top: 55%;
 }
