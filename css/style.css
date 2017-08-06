@@ -286,12 +286,17 @@ header {
     width: 350px;
     height: 200px;
     display: inline-block;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
+    margin-left: -2px;
+    margin-right: -2px;
+    margin-bottom: -5px;
     overflow: hidden;
     box-shadow: inset 3px 3px 8px -2px rgba(0,0,0,0.3);
     cursor: default;
+    transition: all 250ms ease;
+}
+.template:hover {
+    transform: scale(1.03);
+    z-index: 1;
 }
 .template img {
     width: inherit;
@@ -302,11 +307,15 @@ header {
     right:0;
     bottom: 0;
     z-index: -1;
+    transition: all 250ms ease;
+}
+.template:hover img {
+    top:-5%;
 }
 .template .info {
     background-color: rgba(255, 255, 255, 0.95);
     position: relative;
-    top: 100%;
+    top: 90%;
     left: 0;
     right:0;
     bottom: 0;
