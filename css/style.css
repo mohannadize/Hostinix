@@ -412,7 +412,7 @@ header {
 }
 #seperatorTwo {
     width: 100vw;
-    padding-top: 40px;
+    padding-top: 38px;
     padding-bottom: 40px;
     position: relative;
     top:-70px;
@@ -440,7 +440,83 @@ header {
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-color: #191919;
+    background: linear-gradient(-45deg,#FB872B,#EDAC27);
     box-shadow: inset 0 0 15px 0px rgba(0,0,0,0.3);
     transform: scale(1.2) rotateZ(-4deg);
+}
+#contact {
+    width: 100vw;
+    position: relative;
+    min-height: 70vh;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    padding-top: 50px;
+}
+#contact::after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1c1c1c;
+    transform: scale(1.25) rotateZ(-4deg);
+}
+#contact::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    height: 130%;
+    background-color: #1c1c1c;
+    transform:;
+}
+#contact h2 {
+    margin: 0;
+    position: relative;
+    border-left: 2px solid #FB872B;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    color: white;
+    font-family: Bariol
+}
+#contact form label {
+    color: #bfbfbf;
+}
+.form-control:focus {
+  border-color: #FB872B;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(251, 135, 43, 0.62);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(251, 135, 43, 0.62);
+}
+#contact form textarea {
+    height: 100px;
+}
+a.submitBtn {
+    position: relative;
+    border-radius: 3px;
+    text-align: right;
+    color: white;
+    top:10px;
+    right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 15px;
+    background-color: #FB872B;
+    text-decoration: none;
+    transition: all 250ms ease;
+}
+a.submitBtn:hover {
+    background-color: #e37722;
+    
 }
