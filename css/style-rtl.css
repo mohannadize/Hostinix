@@ -1,5 +1,10 @@
+@media (max-width: @screen-xs-max) { ... }
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { 
 
-@media (min-width: 768px){
-  #wrapper {padding-right: 225px; padding-left: 0;}
-  .side-nav{right: 0;left: auto;}
-}
+ }
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) { 
+
+ }
+@media (min-width: 1200px) { 
+
+ }

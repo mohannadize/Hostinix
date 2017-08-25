@@ -1,14 +1,3 @@
-/*!
-* Start Bootstrap - SB Admin Bootstrap Admin Template (http://startbootstrap.com)
-* Code licensed under the Apache License v2.0.
-* For details, see http://www.apache.org/licenses/LICENSE-2.0.
-*/
-
-/* Global Styles */
-@font-face {
-    font-family: Raph;
-    src: url("../fonts/RaphLanokFuture.ttf");
-}
 @font-face {
     font-family: Bariol;
     src: url("../fonts/bariol_regular-webfont.ttf");
@@ -17,8 +6,22 @@
     font-family: SpecialVal;
     src: url("../fonts/SpecialVal.ttf");
 }
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
 html {
     overflow-x: hidden;
+    width: 100vw;
+}
+body {
+    width: 100vw;
+/*    overflow-x: hidden;*/
 }
 header {
     position: absolute;
@@ -29,18 +32,21 @@ header {
 .fixedHeader {
     position: fixed;
     background-color: white;
-    padding-bottom: 20px; 
+    padding-bottom: 15px; 
     box-shadow: 0 3px 7px 0 rgba(0,0,0,0.3);
 }
 .pagelogo h2 {
-    font-family: Raph;
+    font-family: "Source Sans Pro", sans-serif;
     font-weight: 300;
     margin-left: 55px;
-    margin-top: 25px;
+    margin-top: 20px;
     float: left;
     color: white;
     text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
     cursor: default;
+}
+.pagelogo h2 span {
+    font-weight: 600;
 }
 .fixedHeader h2 {
     color: #3e3e3e;
@@ -48,7 +54,7 @@ header {
 }
 .nav .langBtn {
     position: absolute;
-    top: 35px;
+    top: 28px;
     right: 43px;
 }
 .nav ul {
@@ -58,12 +64,14 @@ header {
     top: 15px;
     right: 90px;
     background-color: white;
+    border-radius: 7px;
     box-shadow: 3px 3px 13px -0px rgba(0,0,0,0.2);
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     cursor: default;
 }
 .fixedHeader .nav ul {
+    background-color: transparent;
     box-shadow: 0 0 0 0 #000;
 }
 .nav li {   
@@ -223,9 +231,11 @@ header {
     
 }
 #features > div {
+    /*float: left;*/
+    cursor: default;
     display: inline-block;
     width: 250px;
-/*    background-color: #e6cd8c;*/
+    background-color: #fff;
     margin-left: 40px;
     margin-right: 40px;
     margin-bottom: 60px;
@@ -445,9 +455,10 @@ header {
     transform: scale(1.2) rotateZ(-4deg);
 }
 #contact {
+    z-index: 0;
     width: 100vw;
-    position: relative;
     min-height: 70vh;
+    position: relative;
     padding-left: 15vw;
     padding-right: 15vw;
     padding-top: 50px;
@@ -464,19 +475,7 @@ header {
     height: 100%;
     background-color: #1c1c1c;
     transform: scale(1.25) rotateZ(-4deg);
-}
-#contact::before {
-    z-index: -1;
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    width: 100%;
-    height: 130%;
-    background-color: #1c1c1c;
-    transform:;
+    box-shadow: 0 0 15px -5px rgba(0,0,0,0.9);
 }
 #contact h2 {
     margin: 0;
@@ -490,6 +489,8 @@ header {
 }
 #contact form label {
     color: #bfbfbf;
+}
+.form-control {
 }
 .form-control:focus {
   border-color: #FB872B;
@@ -517,6 +518,155 @@ a.submitBtn {
     transition: all 250ms ease;
 }
 a.submitBtn:hover {
-    background-color: #e37722;
-    
+/*    background-color: #e37722;*/
+      outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(251, 135, 43, 0.62);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(251, 135, 43, 0.62);
+}
+footer {
+    z-index: -1;
+    width: 100vw;
+    min-height: 310px;
+    padding-top: 130px;
+    position: relative;
+    background-color: #0F0F0F;
+    left: 0;
+    top: 0;
+    margin-bottom: -30%;
+}
+footer .payments,footer .quicklinks {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    font-family: bariol,sans-serif;
+}
+footer .payments ul {
+    list-style: none;
+    cursor: default;
+    width: 100%;
+}
+footer .payments li {
+    font-size: 40px;
+    display: inline-block;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 15px;
+    pointer-events: none;
+}
+footer .quicklinks .left{
+    margin-top: 55px;
+    float: left;
+    margin-left: 35px;
+}
+footer .quicklinks .right{
+    margin-top: 55px;
+    float: right;
+    margin-right: 35px;
+}
+footer .quicklinks a:hover {
+    text-decoration: none;
+}
+.loginModal {
+    z-index: 3;
+    position: fixed;
+    background-color: #fff;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+}
+.loginModal .anim-fast{
+    -webkit-transition: all 150ms;
+    -moz-transition: all 150ms;
+    -ms-transition: all 150ms;
+    -o-transition: all 150ms;
+    transition: all 150ms;
+}
+.loginModal a[name=cancelLogin] {
+    color:#E27A4D;
+    position: absolute;
+    top: 10px;
+    right: 10vw;
+    font-size: 36px;
+}
+.loginModal .logo-login{
+    max-width:50px;
+    min-width:50px;
+    position:fixed;
+    top:20px;
+    left:20px;
+}
+
+.loginModal .login{
+    top:0px;
+}
+
+.loginModal .login h1, 
+.loginModal .login h4{
+    font-family:"Source Sans Pro";
+    font-weight:900;
+    color:#E27A4D;
+}
+.loginModal .form-control,
+.loginModal .form-control:hover{
+    border:0px;
+    box-shadow:none;
+    border-bottom:1px solid #d6d6d6;
+    height:40px;
+    font-size:27px;
+    font-weight: 200;
+    font-family:"Source Sans Pro";
+    margin-top:40px;
+    margin-bottom:20px;
+    text-align:center;
+}
+.loginModal .checkbox{font-family:"Source Sans Pro"; font-weight:300; color:#555}
+
+.loginModal .form-control:active,
+.loginModal .form-control:focus{
+    box-shadow:none;
+    border:0;
+    border-bottom:1px solid #717171;
+}
+.loginModal .login .input{
+    margin-top:40px;
+
+}
+.loginModal .forgotpw{
+    background-color:#6BF178;
+    color:#fff;
+    margin-top:40px;
+}
+.loginModal #resetpw{
+    font-size:20px;
+}
+.loginModal .submit-btn{
+    padding:10px 25px 10px 25px;
+    border-radius:5px;
+    background-color:#18E64F;
+    color:#fff;
+    font-family:"Source Sans Pro";
+    font-weight:400;
+    font-size:18px;
+}
+.loginModal .submit-btn:hover{
+    color:#fff;
+    background-color:#58d464;
+}
+.loginModal .forgotpass{
+    margin-top:80px;
+}
+.loginModal .clickable{
+    cursor: pointer;   
+}
+.loginModal .panel-heading {
+    cursor: pointer;
+}
+.loginModal .panel-heading span {
+    margin-top: -20px;
+    font-size: 15px;
 }
