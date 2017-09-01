@@ -2,11 +2,11 @@
 <html>
     <head>
         <link href="css/pace-theme-flash.css" rel="stylesheet">
-        <!-- <link rel="shortcut icon" type="image/png" href="images/favicon.png"/> -->
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
         <script src="js/pace.min.js"></script>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1,initial-scale=1,user-scalable=0">
         <meta name="description" content="">
         <meta name="author" content="">
         <title>HostingService</title>
@@ -29,6 +29,7 @@
     <body>
         <header class="noselect">
             <div class="pagelogo">
+                <img class="logoimg" src="images/logo.png">
                 <h2>Hosting<span>Service</span></h2>
             </div>
             <div class="nav">
@@ -39,6 +40,7 @@
                     <li><a class="hoverBox" href="javascript:void(0)" name="loginBtn">Log In</a></li>
                 </ul>
                 <a class="langBtn" href=#>AR</a>
+                <a class="menuBtn" name="menuBtn" href="javascript:void(0)"><i class="fa fa-bars"></i></a>
             </div>
         </header>
         <div class="gradientOne"></div>
@@ -197,7 +199,7 @@
         <div class="loginModal">
           <div class="row">
           
-            <a href="index.html"><img alt="Logo" class="logo-login" src="img/logo.png"/></a>
+            <a href="index.html"><img alt="Logo" class="logo-login" src="images/logo.png"/></a>
             <a href="javascript:void(0)" name="cancelLogin"><i class="fa fa-times"></i></a>
 
             <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 login">
@@ -250,6 +252,7 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery-scrollspy.js"></script>
         <script type="text/javascript">
+            var toggleMenu = 0;
             $(function() {
                 $('a[href*="#"]:not([href="#"])').click(function() {
                     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -280,7 +283,7 @@
 
             });
             $(function(){
-                $(".panel-heading span.clickable").addClass('panel-collapsed');
+                $(".panel-heading").addClass('panel-collapsed');
             });
             $(document).on('click', '.panel-heading', function(e){
                 var $this = $(this);
@@ -298,11 +301,35 @@
                 var loginModal = $(".loginModal");
                 loginModal.css("pointer-events","initial");
                 loginModal.animate({opacity:1},500);
-            })
+            });
             $("a[name=cancelLogin]").click(function(){
                 var loginModal = $(".loginModal");
                 loginModal.css("pointer-events","none");
                 loginModal.animate({opacity:0},500);
+            });
+            $("a[name=menuBtn]").click(function(){
+                if (toggleMenu) {
+                    toggleMenu = 0;    
+                    var btn = $(this);
+                    btn.css("box-shadow","inset 0 0 0px rgba(0,0,0,0.2)");
+                    var element = $(".nav ul");
+                    element.css("top","-200px");
+                } else {
+                    toggleMenu = 1;    
+                    var btn = $(this);
+                    btn.css("box-shadow","inset 0 0 7px rgba(0,0,0,0.2)");
+                    var element = $(".nav ul");
+                    element.css("top","99%");
+                }
+            });
+            $(".nav ul li a").click(function(){
+                if (toggleMenu) {
+                    toggleMenu = 0;    
+                    var btn = $("a[name=menuBtn]");
+                    btn.css("box-shadow","inset 0 0 0px rgba(0,0,0,0.2)");
+                    var element = $(".nav ul");
+                    element.css("top","-200px");
+                }
             })
         </script>
     </body>

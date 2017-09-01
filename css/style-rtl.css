@@ -1,10 +1,112 @@
-@media (max-width: @screen-xs-max) { ... }
-@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { 
+@media (max-width: 768px) {
+	body {
+		/*background: linear-gradient(120deg,#FB872B, #D9E021);*/
+	}
+	header .pagelogo h2 {
+		display: none;
+	}
+	header .pagelogo img {
+		width: 80px;
+		top: 20px;
+		left: 15px;
+		margin-bottom: 25px;
+	}
+	.nav .langBtn {
+		display: none;
+	}
+	.nav ul {
+		border-radius: 0;
+	    list-style: none;
+	    font-family: Bariol;
+	    position: absolute;
+	    width: 100vw;
+	    /*top: 15px;*/
+	    left: 0;
+	    top:-200px;
+	    overflow: hidden;
+	    background-color: white;
+	    padding-top: 10px;
+	    padding-bottom: 10px;
+	    cursor: default;
+	    /*opacity: 0;*/
+	    transition: all 300ms ease;
+	}
+	.fixedHeader .nav ul {
+		background-color: white;
+		box-shadow: 0 7px 7px -4px rgba(0,0,0,0.2);
+	}
+	.nav li {   
+    	display: block;
+    	text-align: center;
+    	font-size: 24px;
+    	margin-bottom: 7px;
+    	position: relative;
+	}
+	header .menuBtn {
+		visibility: visible;
+		pointer-events: all;
+		position: absolute;
+		top: 20px;
+		right: 40px;
+		font-size: 28px;
+		padding: 5px;
+		padding-left: 15px;
+		padding-right: 15px;
+		border-radius: 8px;
+		background-color: rgb(250,250,250);
+		border: 1px solid rgb(200,200,200);
+		transition: all 250ms ease;
+	}
+	.intro {
+		right: 0;
+		width: 100vw;
+	}
+	.intro p {
+		text-align: center;
+		font-size: 32px;
+		display: block;
+	}
+	.perviews {
+    	position: relative;
+    	float: both;
+    	top: 0px;
+    	left: 0px;
+	}
+	.perviews img {
+	    width: 60vw;
+	}
+	.perviews .template1 {
+	    top:-180px;
+	    right: -10vw;
+	    z-index: 1;
+	}
+	.perviews .template2 {
+	    z-index: 0;
+	    position: relative;
+	    top:-260px;
+	    right: -25vw;
 
- }
-@media (min-width: @screen-md-min) and (max-width: @screen-md-max) { 
-
- }
-@media (min-width: 1200px) { 
-
- }
+	}
+	#features > div {
+	    margin-left: 0px;
+	}
+	#gallery {
+	    padding-left: 0px;
+	    padding-right: 0px;
+	}
+	#seperatorTwo h1 {
+		font-size: 50px;
+		margin-bottom: 35px;
+	}
+	footer .quicklinks {
+	    top: -10px;
+	}
+	#contact {
+		padding-left: 9vw;
+	    padding-right: 9vw;
+	}
+	footer .payments ul {
+		padding-left: 7vw;
+		padding-right: 7vw;
+	}
+}
