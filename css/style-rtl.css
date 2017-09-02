@@ -6,7 +6,7 @@
 		display: none;
 	}
 	header .pagelogo img {
-		width: 80px;
+		width: 20vw;
 		top: 20px;
 		left: 15px;
 		margin-bottom: 25px;
@@ -38,7 +38,7 @@
 	.nav li {   
     	display: block;
     	text-align: center;
-    	font-size: 24px;
+    	font-size: 18px;
     	margin-bottom: 7px;
     	position: relative;
 	}
@@ -46,12 +46,12 @@
 		visibility: visible;
 		pointer-events: all;
 		position: absolute;
-		top: 20px;
+		top: 23px;
 		right: 40px;
-		font-size: 28px;
-		padding: 5px;
-		padding-left: 15px;
-		padding-right: 15px;
+		font-size: 7vw;
+		padding: 1vw;
+		padding-left: 3vw;
+		padding-right: 3vw;
 		border-radius: 8px;
 		background-color: rgb(250,250,250);
 		border: 1px solid rgb(200,200,200);
@@ -87,12 +87,21 @@
 	    right: -25vw;
 
 	}
+	#features {
+		padding-left: 0;
+		padding-right: 0;
+	}
 	#features > div {
-	    margin-left: 0px;
+	    margin-left: 7px;
+	    margin-right: 7px;
 	}
 	#gallery {
 	    padding-left: 0px;
 	    padding-right: 0px;
+	}
+	#gallery .template {
+		width: 90vw;
+		height: 165px;
 	}
 	#seperatorTwo h1 {
 		font-size: 50px;
@@ -108,5 +117,8 @@
 	footer .payments ul {
 		padding-left: 7vw;
 		padding-right: 7vw;
+	}
+	.loginModal .form-control,.loginModal .form-control:hover {
+		margin-bottom: 0;
 	}
 }
