@@ -6,7 +6,7 @@
         <script src="js/pace.min.js"></script>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1,initial-scale=1,user-scalable=0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta name="description" content="">
         <meta name="author" content="">
         <title>HostingService</title>
@@ -40,7 +40,7 @@
                     <li><a class="hoverBox" href="javascript:void(0)" name="loginBtn">Log In</a></li>
                 </ul>
                 <a class="langBtn" href=#>AR</a>
-                <a class="menuBtn" name="menuBtn" href="javascript:void(0)"><i class="fa fa-bars"></i></a>
+                <span class="menuBtn" name="menuBtn" href="javascript:void(0)"><i class="fa fa-bars"></i></span>
             </div>
         </header>
         <div class="gradientOne"></div>
@@ -307,28 +307,31 @@
                 loginModal.css("pointer-events","none");
                 loginModal.animate({opacity:0},500);
             });
-            $("a[name=menuBtn]").click(function(){
+            $("span[name=menuBtn]").click(function(){
                 if (toggleMenu) {
                     toggleMenu = 0;    
                     var btn = $(this);
                     btn.css("box-shadow","inset 0 0 0px rgba(0,0,0,0.2)");
                     var element = $(".nav ul");
-                    element.css("top","-200px");
+                    element.css("pointer-events","none");
+                    element.css("opacity","0");
                 } else {
                     toggleMenu = 1;    
                     var btn = $(this);
                     btn.css("box-shadow","inset 0 0 7px rgba(0,0,0,0.2)");
                     var element = $(".nav ul");
-                    element.css("top","99%");
+                    element.css("pointer-events","initial");
+                    element.css("opacity","1");
                 }
             });
             $(".nav ul li a").click(function(){
                 if (toggleMenu) {
                     toggleMenu = 0;    
-                    var btn = $("a[name=menuBtn]");
+                    var btn = $("span[name=menuBtn]");
                     btn.css("box-shadow","inset 0 0 0px rgba(0,0,0,0.2)");
                     var element = $(".nav ul");
-                    element.css("top","-200px");
+                    element.css("pointer-events","none");
+                    element.css("opacity","0");
                 }
             })
         </script>
