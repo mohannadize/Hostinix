@@ -611,8 +611,7 @@ footer .quicklinks a:hover {
     z-index: 2;
 }
 .loginModal .logo-login{
-    max-width:50px;
-    min-width:50px;
+    width:70px;
     position:fixed;
     top:20px;
     left:20px;
