@@ -273,7 +273,7 @@ header .menuBtn {
     width: 100%;
     height: 100%;
     border-left:2px solid #d86c16;
-    transform: scaleY(0.7);
+    transform: scaleY(0.5);
 }
 #features > div .icon {
     font-size: 48px;
@@ -326,7 +326,7 @@ header .menuBtn {
     position: absolute;
     display:inline;
     pointer-events:none;
-    top: -3%;
+    top: -6%;
     left: -30.1%;
     right:0;
     bottom: 0;
@@ -340,7 +340,7 @@ header .menuBtn {
     position: absolute;
     display:inline;
     pointer-events:none;
-    top: 3%;
+    top: 6%;
     left: 30.1%;
     right:0;
     bottom: 0;
@@ -362,7 +362,7 @@ header .menuBtn {
     cursor: default;
     transition: all 250ms ease;
 }
-.template:hover {
+.template:hover, .template:active {
     transform: scale(1.03);
     z-index: 1;
 }
@@ -377,7 +377,7 @@ header .menuBtn {
     z-index: -1;
     transition: all 250ms ease;
 }
-.template:hover img {
+.template:hover img, .template:active img {
     top:-5%;
 }
 .template .info {
@@ -416,12 +416,12 @@ header .menuBtn {
     font-size: 16px;
     transition: all 250ms ease;
 }
-.template .info a:hover {
+.template .info a:hover, .template .info a:active {
     color:white;
     background-color: black;
 }
-.template:hover .info {
-    top: 55%;
+.template:hover .info, .template:active .info {
+    top: 50%;
 }
 .notice {
     color: gray;

@@ -35,7 +35,7 @@
             <div class="nav">
                 <ul>
                     <li><a class="hoverLine" href="#features">Feautures</a></li>
-                    <li><a class="hoverLine" href="#gallery">Gallery</a></li>
+                    <li><a class="hoverLine" href="#seperatorOne">Gallery</a></li>
                     <li><a class="hoverLine" href="#contact">Contact Us</a></li>
                     <li><a class="hoverBox" href="javascript:void(0)" name="loginBtn">Log In</a></li>
                 </ul>
@@ -348,7 +348,7 @@
                 }        
             });
             document.addEventListener('touchmove', function (event) {
-              if (event.scale !== 1) { event.preventDefault(); }
+              if (event.scale == 1) { event.preventDefault(); }
             }, false);
             document.addEventListener('touchend', function (event) {
               var now = (new Date()).getTime();
