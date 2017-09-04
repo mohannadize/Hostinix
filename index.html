@@ -34,13 +34,13 @@
             </div>
             <div class="nav">
                 <ul>
-                    <li><a class="hoverLine" href="#features">Feautures</a></li>
+                    <li><a class="hoverLine" href="#features">Features</a></li>
                     <li><a class="hoverLine" href="#seperatorOne">Gallery</a></li>
                     <li><a class="hoverLine" href="#contact">Contact Us</a></li>
                     <li><a class="hoverBox" href="javascript:void(0)" name="loginBtn">Log In</a></li>
+                <a class="langBtn" href=#><i class="fa fa-globe"></i> AR</a>
                 </ul>
-                <a class="langBtn" href=#>AR</a>
-                <span class="menuBtn" name="menuBtn" href="javascript:void(0)"><i class="fa fa-bars"></i></span>
+                <span class="menuBtn" name="menuBtn" href="javascript:void(0)"><i class="fa fa-bars"></i><i class="fa fa-times off"></i></span>
             </div>
         </header>
         <div class="gradientOne"></div>
@@ -254,6 +254,26 @@
         <script type="text/javascript">
             var toggleMenu = 0;
             var lastTouchEnd = 0;
+            function toggleMenuF() {
+                if (toggleMenu) {
+                    toggleMenu = 0;    
+                    var btn = $("span[name=menuBtn]");
+                    btn.toggleClass("clicked");
+                    $("span[name=menuBtn] i").toggleClass("off");
+                    var element = $(".nav ul");
+                    element.css("pointer-events","none");
+                    element.css("opacity","0");
+                } else {
+                    toggleMenu = 1;
+                    var btn = $("span[name=menuBtn]");
+                    btn.toggleClass("clicked");
+                    $("span[name=menuBtn] i").toggleClass("off");
+                    var element = $(".nav ul");
+                    element.css("pointer-events","initial");
+                    element.css("opacity","1");
+                }
+                return;
+            }
             $(function() {
                 $('a[href*="#"]:not([href="#"])').click(function() {
                     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -272,7 +292,7 @@
 
                 var $nav = $('header');
 
-                $("header").scrollspy({
+                $(".pagelogo").scrollspy({
                     min: $nav.offset().top,
                     onEnter: function(element, position) {
                         $nav.removeClass('fixedHeader');
@@ -309,46 +329,21 @@
                 loginModal.animate({opacity:0},500);
             });
             $("span[name=menuBtn]").click(function(){
-                if (toggleMenu) {
-                    toggleMenu = 0;    
-                    var btn = $(this);
-                    btn.css("box-shadow","inset 0 0 0px rgba(0,0,0,0.2)");
-                    var element = $(".nav ul");
-                    element.css("pointer-events","none");
-                    element.css("opacity","0");
-                } else {
-                    setTimeout(function(){
-                        toggleMenu = 1;    
-                    },100);
-                    var btn = $(this);
-                    btn.css("box-shadow","inset 0 0 7px rgba(0,0,0,0.2)");
-                    var element = $(".nav ul");
-                    element.css("pointer-events","initial");
-                    element.css("opacity","1");
-                }
+                toggleMenuF();
             });
-            $(".nav ul li a").click(function(){
-                if (toggleMenu) {
-                    toggleMenu = 0;
-                    var btn = $("span[name=menuBtn]");
-                    btn.css("box-shadow","inset 0 0 0px rgba(0,0,0,0.2)");
-                    var element = $(".nav ul");
-                    element.css("pointer-events","none");
-                    element.css("opacity","0");
-                }
+            $(".nav a").click(function(){
+                toggleMenuF();
+            });
+            $(".nav ul").click(function(){
+                toggleMenuF();
             });
             $(document).click(function(event) { 
-                if(!($(event.target).closest('.nav ul').length) && toggleMenu) {
-                    toggleMenu = 0;    
-                    var btn = $("span[name=menuBtn]");
-                    btn.css("box-shadow","inset 0 0 0px rgba(0,0,0,0.2)");
-                    var element = $(".nav ul");
-                    element.css("pointer-events","none");
-                    element.css("opacity","0");
+                if(!($(event.target).closest('.nav ul').length) && toggleMenu && !($(event.target).closest('.menuBtn').length)) {
+                    toggleMenuF();
                 }        
             });
             document.addEventListener('touchmove', function (event) {
-              if (event.scale == 1) { event.preventDefault(); }
+              if (event.scale != 1) { event.preventDefault(); }
             }, false);
             document.addEventListener('touchend', function (event) {
               var now = (new Date()).getTime();

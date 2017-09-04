@@ -9,19 +9,29 @@
 		margin-bottom: 25px;
 	}
 	.nav .langBtn {
-		display: none;
+		position: absolute;
+		display: inline-block;
+		bottom: 10vh;
+		right: 50px;
+		top:auto;
+		left: auto;
+		color: white;
+		font-size: 18px;
 	}
 	.nav ul {
 		border-radius: 0;
 	    list-style: none;
 	    font-family: Bariol;
-	    position: absolute;
+	    position: fixed;
 	    width: 100vw;
-	    top: 99%;
+	    height: 100vh;
+	    top: 0;
+	    bottom: 0;
+	    right: 0;
 	    left: 0;
-	    overflow: hidden;
-	    background-color: white;
-	    padding-top: 10px;
+	    background-color: transparent;
+	    background-image: linear-gradient(90deg,rgba(0,0,0,0.2),rgba(0,0,0,0.9) 95%);
+	    padding-top: 40%;
 	    padding-bottom: 10px;
 	    cursor: default;
 	    pointer-events: none;
@@ -29,30 +39,54 @@
 	    transition: all 300ms ease;
 	}
 	.fixedHeader .nav ul {
-		background-color: white;
+		background-color: transparent;
 		box-shadow: 0 7px 7px -4px rgba(0,0,0,0.2);
 	}
-	.nav li {   
+	.nav li {
+		color: #ffffff;
+		text-shadow: 2px 2px 4px rgba(251,135,43,0.4);
     	display: block;
-    	text-align: center;
-    	font-size: 18px;
+    	text-align: right;
+    	font-size: 36px;
     	margin-bottom: 7px;
     	position: relative;
+    	font-family: lobster;
+	}
+	.nav a {
+		color: white;
 	}
 	header .menuBtn {
 		visibility: visible;
 		pointer-events: all;
 		position: absolute;
 		top: 23px;
-		right: 40px;
-		font-size: 7vw;
-		padding: 1vw;
-		padding-left: 3vw;
-		padding-right: 3vw;
+		right: 30px;
+		text-align: center;
+		font-size: 8vw;
+		width: 12vw;
+		height: 12vw;
 		border-radius: 8px;
-		background-color: rgb(250,250,250);
-		border: 1px solid rgb(200,200,200);
+		/*background-color: rgb(250,250,250);*/
+		/*border: 1px solid rgb(200,200,200);*/
 		transition: all 250ms ease;
+	}
+	header .menuBtn.clicked {
+		/*box-shadow:inset 0 0 0px rgba(0,0,0,0.2);*/
+		/*border:1px solid transparent;*/
+		background-color: transparent;
+		color:white;
+	}
+	header .menuBtn i {
+		position: absolute;
+		top: 2vw;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		transition: all 100ms ease;
+	}
+	header .menuBtn i.off {
+		color:white;
+		opacity: 0;
 	}
 	.intro {
 		right: 0;
@@ -116,6 +150,8 @@
 	}
 	.loginModal .form-control,.loginModal .form-control:hover {
 		margin-bottom: 0;
+		margin-top: 10px;
+		font-size: 1.25em;
 	}
 	.loginModal .logo-login {
 		width:20vw;
@@ -224,5 +260,73 @@
 	#seperatorTwo {
     padding-top: 40px;
     padding-bottom: 110px;
+	}
+}
+@media (min-width: 992px) {
+	.nav li > .hoverLine::after {
+	    content: "";
+	    position: absolute;
+	    display: inline;
+	    width: 80%;
+	    height: 2px;
+	    bottom: -5px;
+	    left: 10%;
+	    background-color: #404040;
+	    opacity: 0.01;
+	    -webkit-transform: scaleX(0.01);
+	    transform: scaleX(0.01);
+	    -webkit-transition: all 0.3s ease-in-out 0s;
+	    transition: all 0.3s ease-in-out 0s;
+	}
+	.nav li > .hoverLine:hover::after {
+	    background-color: #000;
+	    opacity: 1;
+	    -webkit-transform: scaleX(1);
+	    transform: scaleX(1);
+	}
+	.nav li > .hoverBox:hover {
+	    color: #d86c16;
+	}
+	.nav li > .hoverBox::after {
+	    content: "";
+	    position: absolute;
+	    display: inline;
+	    width: 160%;
+	    height: 160%;
+	    bottom: -30%;
+	    left: -30%;
+	    border-top: 2px solid #d86c16;
+	    border-bottom: 2px solid #d86c16;
+	    opacity: 0.01;
+	    -webkit-transform: scaleX(0.01);
+	    transform: scaleX(0.01);
+	    -webkit-transition: all 0.5s ease;
+	    transition: all 0.5s ease;
+	}
+	.nav li > .hoverBox:hover::after {
+	    opacity: 1;
+	    -webkit-transform: scaleX(1);
+	    transform: scaleX(1);
+	}
+	.nav li > .hoverBox::before {
+	    content: "";
+	    position: absolute;
+	    display: inline;
+	    width: 160%;
+	    height: 160%;
+	    bottom: -30%;
+	    left: -30%;
+	    border-left: 2px solid #d86c16;
+	    border-right: 2px solid #d86c16;
+	    opacity: 0.01;
+	    -webkit-transform: scaleY(0.01);
+	    transform: scaleY(0.01);
+	    -webkit-transition: all 0.5s ease;
+	    transition: all 0.5s ease;
+	}
+	.nav li > .hoverBox:hover::before {
+	    opacity: 1;
+	    -webkit-transform: scaleY(1);
+	    transform: scaleY(1);
 	}
 }

@@ -61,8 +61,8 @@ header {
 }
 .nav .langBtn {
     position: absolute;
-    top: 28px;
-    right: 43px;
+    top: 14px;
+    right: -50px;
 }
 .nav ul {
     list-style: none;
@@ -86,72 +86,6 @@ header {
     margin-right: 45px;
     font-size: 18px;
     position: relative;
-}
-.nav li > .hoverLine::after {
-    content: "";
-    position: absolute;
-    display: inline;
-    width: 80%;
-    height: 2px;
-    bottom: -5px;
-    left: 10%;
-    background-color: #404040;
-    opacity: 0.01;
-    -webkit-transform: scaleX(0.01);
-    transform: scaleX(0.01);
-    -webkit-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s;
-}
-.nav li > .hoverLine:hover::after {
-    background-color: #000;
-    opacity: 1;
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-}
-.nav li > .hoverBox:hover {
-    color: #d86c16;
-}
-.nav li > .hoverBox::after {
-    content: "";
-    position: absolute;
-    display: inline;
-    width: 160%;
-    height: 160%;
-    bottom: -30%;
-    left: -30%;
-    border-top: 2px solid #d86c16;
-    border-bottom: 2px solid #d86c16;
-    opacity: 0.01;
-    -webkit-transform: scaleX(0.01);
-    transform: scaleX(0.01);
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-.nav li > .hoverBox:hover::after {
-    opacity: 1;
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-}
-.nav li > .hoverBox::before {
-    content: "";
-    position: absolute;
-    display: inline;
-    width: 160%;
-    height: 160%;
-    bottom: -30%;
-    left: -30%;
-    border-left: 2px solid #d86c16;
-    border-right: 2px solid #d86c16;
-    opacity: 0.01;
-    -webkit-transform: scaleY(0.01);
-    transform: scaleY(0.01);
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-.nav li > .hoverBox:hover::before {
-    opacity: 1;
-    -webkit-transform: scaleY(1);
-    transform: scaleY(1);
 }
 .nav a {
     color: #404040;
