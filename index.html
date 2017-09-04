@@ -149,19 +149,20 @@
                 <form>
                     <div class="form-group col-xs-12 col-md-8 col-lg-6">
                         <label for="name"><span style="color:#af0000">*</span> Full Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="FirstName SecondName LastName">
+                        <input required type="text" class="form-control" id="name" placeholder="FirstName SecondName LastName">
                     </div>
                     <div class="form-group col-xs-12 col-md-8 col-lg-6">
                         <label for="email"><span style="color:#af0000">*</span> Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="example@me.com">
+                        <input required type="email" class="form-control" id="email" placeholder="example@me.com">
                     </div>
                     <div class="form-group col-xs-12 col-md-8 col-lg-6">
                         <label for="mobileNo"><span style="color:#af0000">*</span> Mobile No.</label>
-                        <input type="text" class="form-control" id="mobileNo" placeholder="00201XXXXXXXXX">
+                        <input required type="text" class="form-control" id="mobileNo" placeholder="00201XXXXXXXXX">
                     </div>
                     <div class="form-group col-xs-12 col-md-8 col-lg-6">
                         <label for="type"><span style="color:#af0000">*</span> Website Type</label>
-                        <select id="type" class="form-control">
+                        <select required id="type" class="form-control">
+                            <option value=""></option>
                             <option value="p">Personal</option>
                             <option value="b">Business</option>
                         </select>
@@ -176,7 +177,7 @@
                     </div>
                     <div class="form-group col-xs-12 col-md-12 col-lg-12">
                         <label for="desc"><span style="color:#af0000">*</span> Breif Description</label>
-                        <textarea class="form-control" id="desc"></textarea>
+                        <textarea required class="form-control" id="desc"></textarea>
                     </div>
                     <a class="submitBtn" href="#">Submit</a>
                 </form>
@@ -191,8 +192,8 @@
                     </ul>
                 </div>
                 <div class="quicklinks">
-                    <p class="left"><a href="#"><i class="fa fa-facebook-square"></i> Facebook Page</a></p>
-                    <p class="right"><a href="#">Condize.com</a></p>
+                    <p class="left"><a href="https://www.facebook.com/GeneralPageCZ" target="_blank"><i class="fa fa-facebook-square"></i> Facebook Page</a></p>
+                    <p class="right"><a href="https://condize.com" target="_blank">Condize.com</a></p>
                 </div>
             </footer>
         </div>
@@ -355,7 +356,7 @@
             var scrollEventHandler = function() {
                 setTimeout(function(){
                   window.scroll(0, window.pageYOffset)
-                },250);
+                },1500);
             }
             window.addEventListener("scroll", scrollEventHandler, false);
         </script>

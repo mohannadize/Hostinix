@@ -136,6 +136,8 @@
 	#seperatorTwo h1 {
 		font-size: 50px;
 		margin-bottom: 35px;
+		padding-right: 25px;
+		padding-left: 25px;
 	}
 	footer .quicklinks {
 	    top: -10px;

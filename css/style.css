@@ -436,6 +436,7 @@ header .menuBtn {
     color: #bfbfbf;
 }
 .form-control {
+    border-radius: 0;
 }
 .form-control:focus {
   border-color: #FB872B;
@@ -445,10 +446,11 @@ header .menuBtn {
 }
 #contact form textarea {
     height: 100px;
+    resize: vertical;
 }
 a.submitBtn {
     position: relative;
-    border-radius: 3px;
+    /*border-radius: 3px;*/
     text-align: right;
     color: white;
     top:10px;
@@ -528,6 +530,8 @@ footer .quicklinks a:hover {
     left: 0;
     right: 0;
     pointer-events: none;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 .loginModal .anim-fast{
     -webkit-transition: all 150ms;
