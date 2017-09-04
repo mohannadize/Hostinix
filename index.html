@@ -256,6 +256,9 @@
             var toggleMenu = 0;
             var lastTouchEnd = 0;
             function toggleMenuF() {
+                if ($(window).width() > 992) {
+                    return;
+                }
                 if (toggleMenu) {
                     toggleMenu = 0;    
                     var btn = $("span[name=menuBtn]");
