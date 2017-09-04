@@ -378,13 +378,6 @@
                     toggleMenuF();
                 }        
             });
-            document.addEventListener('touchend', function (event) {
-              var now = (new Date()).getTime();
-              if (now - lastTouchEnd <= 300) {
-                event.preventDefault();
-              }
-              lastTouchEnd = now;
-            }, false);
             var scrollEventHandler = function() {
                 setTimeout(function(){
                   window.scroll(0, window.pageYOffset)
